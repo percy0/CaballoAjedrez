@@ -7,8 +7,8 @@ import javax.naming.OperationNotSupportedException;
 import org.junit.Test;
 
 public class CaballoTest {
-	
-	/*private Posicion posicionDefectoNegro = new Posicion(8, 'b');
+	/*
+	private Posicion posicionDefectoNegro = new Posicion(8, 'b');
 	private Posicion posicionDefectoBlanco = new Posicion(1, 'b');
 	private Posicion posicionNegroG = new Posicion(8, 'g');
 	private Posicion posicionBlancoG = new Posicion(1, 'g');
