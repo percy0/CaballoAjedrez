@@ -7,7 +7,7 @@ import javax.naming.OperationNotSupportedException;
 import org.junit.Test;
 
 public class CaballoTest {
-	/*
+	
 	private Posicion posicionDefectoNegro = new Posicion(8, 'b');
 	private Posicion posicionDefectoBlanco = new Posicion(1, 'b');
 	private Posicion posicionNegroG = new Posicion(8, 'g');
@@ -20,7 +20,7 @@ public class CaballoTest {
 		assertEquals(posicionDefectoNegro, caballo.getPosicion());
 	}
 	
-	@Test
+	/*@Test
 	public void constructorUnParametroValidoTest() {
 		Caballo caballoBlanco = new Caballo(Color.BLANCO);
 		Caballo caballoNegro = new Caballo(Color.NEGRO);
