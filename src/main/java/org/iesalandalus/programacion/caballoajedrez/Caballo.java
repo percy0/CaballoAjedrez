@@ -42,16 +42,32 @@ if(color ==null) {
 	
 }
 	
-/*	public Caballo(Color color, char columnaInicial) {
-		if(columnaInicial!='b' || columnaInicial!='g') {
+	public Caballo(Color color, char columnaInicial) {
+		
+if(color ==null) {
 			
-			throw new IllegalArgumentException("ERROR: Columna inicial no válida.");
+			throw new IllegalArgumentException("ERROR: No se puede asignar un color nulo.");
+
+	}	
+		if((columnaInicial=='b') || (columnaInicial=='g')) {
+			
 		
+			if(color.equals (Color.BLANCO)) {
+				this.posicion=new Posicion(1, columnaInicial);
+				this.color=color;
+				}
+				if(color.equals (Color.NEGRO)) {	
+			this.posicion=new Posicion(8, columnaInicial);
+			this.color=color;
+			}	
+			}else {
+				throw new IllegalArgumentException("ERROR: Columna inicial no válida.");
+				
 		}
-		
+	
 		
 	}
-	public Caballo(Caballo caballo) {
+	/*public Caballo(Caballo caballo) {
 		
 	}
 	public void mover(Direccion direccion) {
