@@ -4,7 +4,8 @@ public enum Color {
 BLANCO, NEGRO;
 	
 	
-	Color(){
+	 Color(){
+	
 		
 	}
 }

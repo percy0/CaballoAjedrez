@@ -1,5 +1,7 @@
 package org.iesalandalus.programacion.caballoajedrez;
 
+import javax.naming.OperationNotSupportedException;
+
 public class Caballo {
 	
 	private Color color;
@@ -67,16 +69,88 @@ if(color ==null) {
 	
 		
 	}
-	/*public Caballo(Caballo caballo) {
+	
+	
+	public void mover(Direccion direccion) throws OperationNotSupportedException {
 		
-	}
-	public void mover(Direccion direccion) {
-		if(direccion == null) {
-			throw new IllegalArgumentException("ERROR: Columna inicial no válida.");
-		}
-		this.direccion= Direccion.ABAJO_DERECHA;
+		switch (direccion) {
+		case ARRIBA_DERECHA:
+			try {
+				
+				
+		posicion = new Posicion ((posicion.getFila()+2), 
+				(char)((posicion.getColumna() +1)));
+					
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");}
+			break;
+		case ARRIBA_IZQUIERDA:
+			try {
+				posicion = new Posicion ((posicion.getFila()+2), 
+						(char)((posicion.getColumna() -1)));
+				
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");}
+			break;
+		case ABAJO_DERECHA:
+			try {
+				posicion = new Posicion ((posicion.getFila()-2), 
+						(char)((posicion.getColumna() +1)));
+							} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");	}
+			break;
+		case ABAJO_IZQUIERDA:
+			try {
+				posicion = new Posicion ((posicion.getFila()-2), 
+						(char)((posicion.getColumna() -1)));
+				
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");	}
+			break;
+		case DERECHA_ARRIBA:
+			try {
+				posicion = new Posicion ((posicion.getFila()+1), 
+						(char)((posicion.getColumna() +2)));
+				
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+			}
+			break;
+		case DERECHA_ABAJO:
+			try {
+				posicion = new Posicion ((posicion.getFila()-1), 
+						(char)((posicion.getColumna() +2)));
+				
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+			}
+			break;
+		case IZQUIERDA_ARRIBA:
+			try {
+				posicion = new Posicion ((posicion.getFila()+1), 
+						(char)((posicion.getColumna() -2)));
+				
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+			}
+			break;
+		case IZQUIERDA_ABAJO:
+			try {
+				posicion = new Posicion ((posicion.getFila()-1), 
+						(char)((posicion.getColumna() -2)));
+			
+			} catch (IllegalArgumentException e) {
+				throw new OperationNotSupportedException("ERROR: Movimiento no válido.");
+			}
+			break;
 		
+		default:
+			
+			
+			
+			break;
 	}
+}
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -105,7 +179,12 @@ if(color ==null) {
 	}
 	@Override
 	public String toString() {
-		return "Caballo [color=" + color + ", posicion=" + posicion + "]";
-	}*/
+		
+		
+		return "Caballo [posición=" + posicion + ", color=" + color + "]";
+	}
+	
+	
+	
 	
 }
